@@ -1,5 +1,5 @@
 {
-  "name": "try-require",
+  "name": "@basementuniverse/try-require",
   "version": "1.0.0",
   "description": "Try to require a module or file and optionally throw an error if it doesn't exist",
   "main": "build/index.js",
@@ -15,6 +15,10 @@
   ],
   "author": "Gordon Larrigan <gordonlarrigan@gmail.com> (https://gordonlarrigan.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basementuniverse/try-require.git"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.1",
