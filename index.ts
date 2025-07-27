@@ -14,16 +14,16 @@ const defaultOptions: RequireOptions = {
 /**
  * Try to require a module or file and optionally throw an error if it fails
  */
-export default function tryRequire(
+export default function tryRequire<T = any>(
   path: string,
   options: Partial<RequireOptions> = {}
-): any {
+): T | undefined {
   const actualOptions = Object.assign({}, defaultOptions, options);
   try {
     return require(path);
   } catch (error) {
     const message = actualOptions.errorMessage instanceof Function
-      ? actualOptions.errorMessage(path, error)
+      ? actualOptions.errorMessage(path, (error as Error))
       : actualOptions.errorMessage;
     if (actualOptions.logError) {
       console.error(message);
